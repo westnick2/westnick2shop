@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyShop</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+
+    <div class="row">
+      <div class="col-3">
+          <%= render 'layouts/sidebar' %>
+      </div>
+
+      <div class="col-9" id="root">
+          <%= yield %>
+      </div>
+
+      <div class="col-9" id="results" style="display: none;">
+          <%= render 'search/results' %>
+        <h1 class="shop" style="color: black;">Check</h1>
+      </div>
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

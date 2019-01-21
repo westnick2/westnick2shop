@@ -1,0 +1,41 @@
+
+<div class="container text-center">
+  <hr>
+  <h4 class="h">Категории:</h4>
+  <hr>
+  <% if categories %>
+    <% categories.each do |list| %>
+      <%= link_to list.category, category_path(list.id), { class: 'link-side'} %><br>
+    <% end %>
+    <% else %>
+  <p> No categories Yet..</p>
+  <% end %>
+</div>
+<div class="container text-center">
+  <hr>
+  <h4 class="h">Фильтр:</h4>
+  <hr>
+</div>
+<!-- Stuff id: 1,
+title: "Ubuntu",
+price: 0.9999e2,
+short_description: "Ubuntu — это операционная система, идеально подход...",
+full_description: "На этом ресурсе собрана различная русскоязычная до...",
+preview_image: "stuff/ubuntu.jpg",
+in_stock: true,
+slug: "ubuntu",
+created_at: "2019-01-04 21:56:27",
+updated_at: "2019-01-04 21:56:27",
+category_id: nil,
+tag_list: nil> -->
+<div class="container text-center">
+<h4 class="h">Тэги:</h4>
+<hr>
+<% if tags %>
+  <% tags.each do |list| %>
+    <%= link_to list, tagged_path(tag: list), { class: 'link-side'} %><br>
+  <% end %>
+<% else %>
+  <p> No tags Yet..</p>
+<% end %>
+</div>

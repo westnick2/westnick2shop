@@ -1,0 +1,120 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+@import "bootstrap";
+@import "trix";
+
+@font-face {
+  font-family: UbuntuMono-Bold;
+  src: url('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+
+  font-family: UbuntuMono-Regular;
+  src: url('fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf');
+};
+
+.shop{
+  font-family: UbuntuMono-Bold;
+  font-size: 150px;
+  color: whitesmoke;
+}
+
+.link{
+  font-family: UbuntuMono-Regular;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+.mb-0{
+  font-family: UbuntuMono-Regular;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+.h{
+  font-family: UbuntuMono-Regular;
+  text-decoration-color: #343a40;
+}
+
+.price{
+  font-family: UbuntuMono-Bold;
+  font-size: 50px;
+  color: green;
+}
+
+.price-small {
+  font-family: UbuntuMono-Bold;
+  font-size: 20px;
+  color: green;
+}
+
+.discount{
+  font-family: UbuntuMono-Bold;
+  text-decoration: line-through;
+  font-size: 30px;
+}
+
+.discount-small{
+  font-family: UbuntuMono-Bold;
+  text-decoration: line-through;
+  font-size: 15px;
+}
+
+.in-stock{
+  font-family: UbuntuMono-Regular;
+  font-size: 25px;
+  color: green;
+}
+
+.not-in-stock{
+  font-family: UbuntuMono-Regular;
+  font-size: 25px;
+  color: darkred;
+}
+
+.link-side{
+  font-family: UbuntuMono-Regular;
+  font-size: 20px;
+  color: #343a40;
+}
+
+#searchField{
+  background-color: #343a40;
+  color: green;
+  border-radius: 10px;
+}
+
+#submit{
+  border-radius: 10px;
+}
+
+.sticky {
+  background: #343a40;
+  z-index: 100;
+}
+
+.fixed {
+  position: fixed;
+  top:0; left:0;
+  width: 100%; }
+
+.comment{
+  font-family: UbuntuMono-Regular;
+  border: #343a40 solid;
+  border-radius: 10px;
+}
+
+#sitefooter {
+  background:#343a40;
+  color: whitesmoke;
+}

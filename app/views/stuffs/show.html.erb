@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-5">
+    <%= render 'karusel' %>
+  </div>
+
+  <div class="col-6">
+    <h2 class="h"><%= @stuff.title %></h2>
+    <small class="h"><%= @stuff.tag_list %></small>
+    <br>
+    <p class="price">
+      <% if @stuff.old_price %>
+       <span class="discount text-muted"><%= @stuff.old_price %> UAH</span>
+      <% end %>
+      <%= @stuff.price %> UAH</p><br>
+    <% if @stuff.in_stock %>
+      <p class="in-stock">Есть в наличии / <%= link_to 'Добавить в корзину', root_path, { :class => 'in-stock' } %></p>
+      <% else %>
+        <p class="not-in-stock">Нет в наличии / <%= link_to 'Сообщить о поступлении', root_path, { :class => 'not-in-stock' } %></p>
+    <% end %>
+    <p><%= @stuff.full_description.html_safe %></p>
+   <div hidden>
+      <hr>
+      <%= link_to 'Edit', edit_stuff_path(@stuff) %> |
+      <%= link_to 'Back', stuffs_path %>
+  </div>
+  </div>
+</div>
+
+<div class="container">
+  <hr>
+<h4 class="h">Последние просмотренные:</h4>
+
+</div>
+
+<div class="container">
+  <hr>
+  <h4 class="h">Покупатели, которые просматривали данный товар, также интересуются:</h4>
+
+</div>
+
+<div class="container">
+  <hr>
+    <% @comments.each do |comment| %>
+      <% if comment.status %>
+      <h4 class="h">Отзывы о товаре <%= @stuff.title %>:</h4>
+        <div class="h">
+          <p><strong>Счастливый покупатель <%= comment.username %></strong>  <small><%= comment.updated_at %></small></p>
+          <span>Оценил товар на <%= comment.rate %> звёзд</span>
+          <p><%= comment.body.html_safe %></p>
+          <hr>
+        </div>
+      <% end %>
+    <% end %>
+</div>
+<div id="commentLink" class="container">
+  <%= link_to 'Оставить отзыв', new_comment_path, remote: true, class: 'link-side'%>
+</div>
+<div class="col-6 comment" id="commentAdded" style="display: none;">
+  <h3>Отзыв отправлен на модерацию.</h3>
+</div>

@@ -1,0 +1,69 @@
+
+<div class="row">
+<div class="col-3">
+  <p>&nbsp</p>
+</div>
+<div class="col-6 h">
+<%= form_with(model: stuff, local: true) do |form| %>
+  <% if stuff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stuff.errors.count, "error") %> prohibited this stuff from being saved:</h2>
+
+      <ul>
+      <% stuff.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, { :class => 'form-control' } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, { :class => 'form-control' } %>
+  </div>
+
+    <div class="field">
+      <%= form.label :old_price %>
+      <%= form.text_field :old_price, { :class => 'form-control' } %>
+    </div>
+
+  <div class="field" >
+    <%= form.label :short_description %>
+    <small>max len is 120. left: <span id="inputted"></span></small>
+    <%= form.text_area :short_description, { :class => 'form-control', :id => 'short-description' } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :full_description %>
+    <%= form.trix_editor :full_description, required: true, autofocus: true  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preview_image %>
+    <%= form.text_field :preview_image, { :class => 'form-control' } %>
+  </div>
+
+  <div class="inline field">
+    <p>In stock<%= form.check_box :in_stock, { :class => 'form-control' } %></p>
+  </div>
+
+    <div class="field">
+      <%= form.label 'category' %>
+      <%= form.select :category_id, category_names_ids, {}, { :class => 'select form-control' } %>
+
+    </div>
+
+    <div class="field">
+      <%= form.label :tag_list %>
+      <%= form.text_field :tag_list, { :class => 'form-control' }  %>
+    </div>
+
+  <div class="actions"><%= form.submit({ :class => 'btn btn-warning'}) %></div>
+<% end %>
+</div>
+</div>

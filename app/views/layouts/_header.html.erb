@@ -1,0 +1,31 @@
+
+<header>
+  <section class="pt-5 pb-5 bg-dark inner-header">
+    <div class="row">
+      <div class="col-8 text-center">
+        <h1 class="shop"><%= image_tag('logo.png', alt: 'logo', width: 150) %>LinuxShop</h1>
+
+      <div class="sticky col-md-12">
+          <div class="breadcrumbs text-center">
+            <p class="mb-0">
+              PC:~$
+              <%= link_to 'Главная', root_path, { class: 'link' } %>  /
+              <%= link_to 'Доставка', delivery_path, { class: 'link' } %>  /
+              <%= link_to 'Оплата', payment_path, { class: 'link' } %>  /
+              <%= link_to 'О нас', about_path, { class: 'link' } %>  /
+              <%= link_to "Корзина#{'(0)'}", stuffs_path, { class: 'link' } %>  /
+              <%= link_to "Admin", adnim_path, { class: 'link' } %>
+              <!--span class="text-success">test</span></p-->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 text-left mb-0">
+        <p>Телефон: +380631234578<br>
+        Email: <span id="mail"></span></p>
+        <%= render 'search/form' %>
+      </div>
+
+    </div>
+  </section>
+</header>

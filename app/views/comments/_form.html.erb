@@ -1,0 +1,47 @@
+
+<div class="col-6">
+<%= form_with(model: comment, local: true) do |form| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username, { :class => 'form-control' } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, { :class => 'form-control' } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.trix_editor :body, required: true, autofocus: true  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rate %>
+    <%= form.number_field :rate, { :class => 'form-control' } %>
+  </div>
+
+  <div class="field">
+    <label>Stuff Id</label>
+    <%= form.number_field :stuff_id, { :class => 'form-control' } %>
+   </div>
+
+  <div class="row">
+    <%= form.label :status %><%= form.check_box :status , { :class => 'form-control' }%>
+  </div>
+
+  <div class="actions"><%= form.submit({ :class => 'btn btn-warning'}) %></div>
+<% end %>
+</div>

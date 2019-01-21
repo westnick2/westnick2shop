@@ -1,0 +1,33 @@
+
+<p id="notice"><%= notice %></p>
+<h3 class="h">Товары с тэгом <%= params[:tag] %>:</h3>
+<div class="container">
+  <div class="row">
+    <% @stuff.reverse_each do |stuff| %>
+      <div class="col-4">
+        <p></p>
+        <div class="card" id="card" style="width: 18rem;">
+          <div align="center">
+            <p></p>
+            <%= link_to image_tag(stuff.preview_image, width: 250), stuff %>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title"><%= stuff.title %></h5>
+
+            <div id="description" style="display: none;">
+              <%= stuff.short_description %>
+            </div>
+
+            <div class="card-text">
+              <% if stuff.old_price %>
+                <span class="discount-small text-muted"><%= stuff.old_price %> UAH</span>
+              <% end %>
+              <span class="price-small">   <%= stuff.price %> UAH</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

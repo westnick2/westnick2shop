@@ -1,0 +1,9 @@
+
+<form id="search" class="col-10 form-inline">
+  <div class="row">
+  <%= form_tag(search_results_path, method: 'get', remote: true) do %>
+    <input id="searchField" placeholder="search" class="form-control" <%= text_field_tag :search_field %>
+    <%= submit_tag 'Найти', :class => 'btn link', :id => 'searchButton' %>
+  <% end %>
+  </div>
+</form>
